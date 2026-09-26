@@ -1,0 +1,801 @@
+/* =====================================
+   GLOBAL
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =====================================
+   REGISTRATION PAGE
+===================================== */
+
+.registration-page {
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 45px 20px;
+
+    background-image: url("image/login-bg.jpeg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+/* =====================================
+   DECORATIVE CIRCLES
+===================================== */
+
+.circle {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(5px);
+
+    opacity: 0.35;
+}
+
+
+.circle-one {
+
+    width: 220px;
+    height: 220px;
+
+    background: #d8c5ff;
+
+    top: -70px;
+    left: -70px;
+
+    animation: floatOne 7s ease-in-out infinite;
+}
+
+
+.circle-two {
+
+    width: 180px;
+    height: 180px;
+
+    background: #b99cff;
+
+    right: -50px;
+    bottom: 40px;
+
+    animation: floatTwo 8s ease-in-out infinite;
+}
+
+
+.circle-three {
+
+    width: 100px;
+    height: 100px;
+
+    background: #eee5ff;
+
+    right: 18%;
+    top: 10%;
+
+    animation: floatThree 6s ease-in-out infinite;
+}
+
+
+/* =====================================
+   REGISTRATION CARD
+===================================== */
+
+.registration-card {
+
+    width: 100%;
+
+    max-width: 480px;
+
+    position: relative;
+
+    z-index: 5;
+
+    padding: 38px 38px 28px;
+
+    background: rgba(255, 255, 255, 0.28);
+
+    backdrop-filter: blur(16px);
+
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(255, 255, 255, 0.48);
+
+    border-radius: 26px;
+
+    box-shadow:
+        0 20px 50px rgba(72, 42, 110, 0.20),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+
+    animation: cardEntry 0.8s ease forwards;
+
+    transition: 0.35s ease;
+}
+
+
+.registration-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 28px 60px rgba(72, 42, 110, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+
+/* =====================================
+   LOGO
+===================================== */
+
+.logo-box {
+
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 17px;
+
+    background: linear-gradient(
+        135deg,
+        #8d63d8,
+        #b18bea
+    );
+
+    color: white;
+
+    font-size: 27px;
+
+    box-shadow:
+        0 10px 25px rgba(111, 72, 170, 0.28);
+
+    animation: logoAnimation 1s ease;
+}
+
+
+/* =====================================
+   HEADING
+===================================== */
+
+.registration-card h1 {
+
+    text-align: center;
+
+    color: #30213f;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+
+    letter-spacing: -0.5px;
+}
+
+
+.subtitle {
+
+    text-align: center;
+
+    color: #665873;
+
+    font-size: 14px;
+
+    margin-bottom: 27px;
+}
+
+
+/* =====================================
+   INPUT BOX
+===================================== */
+
+.input-box {
+
+    margin-bottom: 17px;
+}
+
+
+.input-box label {
+
+    display: block;
+
+    color: #3f3150;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+}
+
+
+/* =====================================
+   INPUT WRAPPER
+===================================== */
+
+.input-wrapper {
+
+    position: relative;
+}
+
+
+.input-wrapper i {
+
+    position: absolute;
+
+    left: 15px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #7656a2;
+
+    font-size: 17px;
+
+    z-index: 2;
+
+    transition: 0.3s ease;
+}
+
+
+/* =====================================
+   INPUT
+===================================== */
+
+.input-wrapper .form-control {
+
+    height: 49px;
+
+    padding-left: 45px;
+
+    padding-right: 14px;
+
+    border-radius: 13px;
+
+    border: 1px solid rgba(116, 82, 155, 0.25);
+
+    background: rgba(255, 255, 255, 0.48);
+
+    color: #30213f;
+
+    font-size: 14px;
+
+    outline: none;
+
+    box-shadow: none;
+
+    transition: 0.3s ease;
+}
+
+
+.input-wrapper .form-control::placeholder {
+
+    color: #8d8198;
+}
+
+
+.input-wrapper .form-control:focus {
+
+    border-color: #8d63d8;
+
+    background: rgba(255, 255, 255, 0.68);
+
+    box-shadow:
+        0 0 0 4px rgba(141, 99, 216, 0.12);
+
+    transform: translateY(-1px);
+}
+
+
+.input-wrapper:focus-within i {
+
+    color: #6843a1;
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+
+/* =====================================
+   TERMS
+===================================== */
+
+.terms {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    margin: 5px 0 20px;
+
+    color: #62566d;
+
+    font-size: 12.5px;
+}
+
+
+.terms input {
+
+    width: 15px;
+
+    height: 15px;
+
+    margin-top: 2px;
+
+    accent-color: #7952b3;
+
+    cursor: pointer;
+}
+
+
+.terms label {
+
+    cursor: pointer;
+
+    line-height: 1.5;
+}
+
+
+.terms a {
+
+    color: #7049a3;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.25s ease;
+}
+
+
+.terms a:hover {
+
+    color: #4f2d7c;
+
+    text-decoration: underline;
+}
+
+
+/* =====================================
+   CREATE ACCOUNT BUTTON
+===================================== */
+
+.create-btn {
+
+    width: 100%;
+
+    height: 51px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    background: linear-gradient(
+        135deg,
+        #7952b3,
+        #9c75d6
+    );
+
+    box-shadow:
+        0 10px 24px rgba(105, 68, 158, 0.25);
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.create-btn i {
+
+    font-size: 16px;
+
+    transition: 0.3s ease;
+}
+
+
+.create-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 30px rgba(105, 68, 158, 0.34);
+
+    background: linear-gradient(
+        135deg,
+        #6d459f,
+        #8f65c7
+    );
+}
+
+
+.create-btn:hover i {
+
+    transform: translateX(4px);
+}
+
+
+.create-btn:active {
+
+    transform: translateY(0);
+}
+
+
+/* =====================================
+   DIVIDER
+===================================== */
+
+.divider {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 23px 0 18px;
+
+    color: #565557;
+
+    font-size: 11px;
+}
+
+
+.divider::before,
+.divider::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: rgba(91, 67, 116, 0.20);
+}
+
+
+/* =====================================
+   LOGIN
+===================================== */
+
+.login-text {
+
+    text-align: center;
+
+    color: #665873;
+
+    font-size: 13px;
+
+    margin-bottom: 17px;
+}
+
+
+.login-text a {
+
+    color: #6f49a4;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    margin-left: 3px;
+
+    transition: 0.25s ease;
+}
+
+
+.login-text a:hover {
+
+    color: #4e2c7c;
+
+    text-decoration: underline;
+}
+
+
+/* =====================================
+   COPYRIGHT
+===================================== */
+
+.copyright {
+
+    text-align: center;
+
+    color: #887c91;
+
+    font-size: 10.5px;
+
+    margin: 0;
+}
+
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+@keyframes cardEntry {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(0.97);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes logoAnimation {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(0.7)
+            rotate(-8deg);
+    }
+
+    70% {
+
+        transform:
+            scale(1.06)
+            rotate(2deg);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0);
+    }
+}
+
+
+@keyframes floatOne {
+
+    0%,
+    100% {
+
+        transform: translate(0, 0);
+    }
+
+    50% {
+
+        transform: translate(25px, 25px);
+    }
+}
+
+
+@keyframes floatTwo {
+
+    0%,
+    100% {
+
+        transform: translate(0, 0);
+    }
+
+    50% {
+
+        transform: translate(-20px, -25px);
+    }
+}
+
+
+@keyframes floatThree {
+
+    0%,
+    100% {
+
+        transform: translateY(0);
+    }
+
+    50% {
+
+        transform: translateY(20px);
+    }
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 768px) {
+
+    .registration-page {
+
+        padding: 35px 18px;
+    }
+
+    .registration-card {
+
+        max-width: 450px;
+
+        padding: 34px 30px 25px;
+    }
+
+    .registration-card h1 {
+
+        font-size: 26px;
+    }
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 480px) {
+
+    .registration-page {
+
+        padding: 25px 14px;
+    }
+
+    .registration-card {
+
+        padding: 30px 21px 23px;
+
+        border-radius: 22px;
+    }
+
+    .logo-box {
+
+        width: 52px;
+        height: 52px;
+
+        font-size: 24px;
+    }
+
+    .registration-card h1 {
+
+        font-size: 23px;
+    }
+
+    .subtitle {
+
+        font-size: 12.5px;
+
+        margin-bottom: 23px;
+    }
+
+    .input-box {
+
+        margin-bottom: 14px;
+    }
+
+    .input-wrapper .form-control {
+
+        height: 47px;
+
+        font-size: 13px;
+    }
+
+    .create-btn {
+
+        height: 48px;
+    }
+
+    .terms {
+
+        font-size: 11.5px;
+    }
+}
+
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 360px) {
+
+    .registration-card {
+
+        padding: 26px 17px 20px;
+    }
+
+    .registration-card h1 {
+
+        font-size: 21px;
+    }
+
+    .subtitle {
+
+        font-size: 11.5px;
+    }
+
+    .input-box label {
+
+        font-size: 12px;
+    }
+
+    .terms {
+
+        font-size: 10.5px;
+    }
+}
+
+/* Light & Professional Hover Effect */
+
+.input-box {
+    transition: transform 0.25s ease;
+}
+
+.input-box:hover {
+    transform: translateY(-1px);
+}
+
+.input-wrapper {
+    transition: all 0.25s ease;
+}
+
+.input-wrapper:hover {
+    box-shadow: 0 4px 12px rgba(112, 90, 160, 0.10);
+}
+
+.input-wrapper:hover i {
+    color: #7b61a8;
+}
+
+.input-wrapper i {
+    transition: color 0.25s ease;
+}

@@ -1,0 +1,581 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.create-video-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+
+    padding: 45px 20px;
+
+    background-image:
+        linear-gradient(
+            rgba(235, 228, 250, 0.12),
+            rgba(235, 228, 250, 0.12)
+        ),
+        url("image/login-bg.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* =========================
+   DECORATIVE CIRCLES
+========================= */
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.circle-one {
+    width: 220px;
+    height: 220px;
+
+    top: -80px;
+    left: -60px;
+
+    background: rgba(145, 120, 190, 0.16);
+
+    animation: floatOne 7s ease-in-out infinite;
+}
+
+.circle-two {
+    width: 170px;
+    height: 170px;
+
+    right: -50px;
+    bottom: 80px;
+
+    background: rgba(120, 100, 180, 0.14);
+
+    animation: floatTwo 8s ease-in-out infinite;
+}
+
+.circle-three {
+    width: 90px;
+    height: 90px;
+
+    top: 18%;
+    right: 12%;
+
+    background: rgba(255, 255, 255, 0.22);
+
+    animation: floatThree 6s ease-in-out infinite;
+}
+
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.video-card {
+    width: 100%;
+    max-width: 650px;
+
+    padding: 38px 42px;
+
+    position: relative;
+    z-index: 2;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.30);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 55px rgba(80, 65, 110, 0.20);
+
+    animation: cardEntry 0.8s ease;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo-box {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 17px;
+
+    background: rgba(123, 97, 168, 0.92);
+
+    color: white;
+
+    font-size: 27px;
+
+    box-shadow:
+        0 10px 25px rgba(123, 97, 168, 0.25);
+
+    animation: logoAnimation 1s ease;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.video-card h1 {
+    text-align: center;
+
+    color: #3f3157;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+.subtitle {
+    text-align: center;
+
+    color: #71687d;
+
+    font-size: 14px;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================
+   INPUT BOX
+========================= */
+
+.input-box {
+    margin-bottom: 19px;
+
+    transition: transform 0.25s ease;
+}
+
+.input-box:hover {
+    transform: translateY(-1px);
+}
+
+.input-box label {
+    display: block;
+
+    color: #4e425c;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 7px;
+}
+
+
+/* =========================
+   INPUT WRAPPER
+========================= */
+
+.input-wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 12px;
+
+    transition: all 0.25s ease;
+}
+
+.input-wrapper > i {
+    position: absolute;
+
+    left: 15px;
+
+    z-index: 3;
+
+    color: #8b7c9e;
+
+    font-size: 17px;
+
+    transition: color 0.25s ease;
+}
+
+
+/* =========================
+   INPUT / SELECT / TEXTAREA
+========================= */
+
+.input-wrapper .form-control,
+.input-wrapper .form-select {
+    min-height: 48px;
+
+    padding-left: 45px;
+    padding-right: 15px;
+
+    border: 1px solid rgba(135, 116, 158, 0.28);
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.38);
+
+    color: #43384e;
+
+    font-size: 14px;
+
+    box-shadow: none;
+
+    transition: all 0.25s ease;
+}
+
+.input-wrapper textarea.form-control {
+    min-height: 125px;
+
+    padding-top: 13px;
+
+    resize: vertical;
+}
+
+
+/* =========================
+   PLACEHOLDER
+========================= */
+
+.form-control::placeholder {
+    color: #91879b;
+}
+
+
+/* =========================
+   FOCUS
+========================= */
+
+.input-wrapper .form-control:focus,
+.input-wrapper .form-select:focus {
+    border-color: rgba(123, 97, 168, 0.65);
+
+    background: rgba(255, 255, 255, 0.55);
+
+    box-shadow:
+        0 0 0 3px rgba(123, 97, 168, 0.09);
+}
+
+
+/* =========================
+   LIGHT HOVER EFFECT
+========================= */
+
+.input-wrapper:hover {
+    box-shadow:
+        0 4px 12px rgba(112, 90, 160, 0.10);
+}
+
+.input-wrapper:hover > i {
+    color: #7b61a8;
+}
+
+
+/* =========================
+   CREATE BUTTON
+========================= */
+
+.create-btn {
+    width: 100%;
+
+    min-height: 50px;
+
+    margin-top: 7px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #7b61a8;
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(123, 97, 168, 0.22);
+
+    transition: all 0.3s ease;
+}
+
+.create-btn:hover {
+    transform: translateY(-2px);
+
+    background: #705696;
+
+    box-shadow:
+        0 11px 25px rgba(123, 97, 168, 0.28);
+}
+
+.create-btn i {
+    transition: transform 0.3s ease;
+}
+
+.create-btn:hover i {
+    transform: translateX(4px);
+}
+
+
+/* =========================
+   COPYRIGHT
+========================= */
+
+.copyright {
+    margin-top: 23px;
+    margin-bottom: 0;
+
+    text-align: center;
+
+    color: #81768c;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes cardEntry {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes logoAnimation {
+
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+@keyframes floatOne {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(20px, 25px);
+    }
+}
+
+
+@keyframes floatTwo {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-20px, -20px);
+    }
+}
+
+
+@keyframes floatThree {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+    .create-video-page {
+        padding: 30px 16px;
+    }
+
+    .video-card {
+        max-width: 580px;
+
+        padding: 32px 28px;
+    }
+
+    .video-card h1 {
+        font-size: 27px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .create-video-page {
+        padding: 22px 12px;
+    }
+
+    .video-card {
+        padding: 28px 20px;
+
+        border-radius: 20px;
+    }
+
+    .video-card h1 {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+
+        margin-bottom: 22px;
+    }
+
+    .logo-box {
+        width: 52px;
+        height: 52px;
+
+        font-size: 24px;
+    }
+
+    .input-box {
+        margin-bottom: 16px;
+    }
+
+    .input-wrapper .form-control,
+    .input-wrapper .form-select {
+        min-height: 46px;
+
+        font-size: 13px;
+    }
+
+    .input-wrapper textarea.form-control {
+        min-height: 110px;
+    }
+
+    .create-btn {
+        min-height: 48px;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 360px) {
+
+    .video-card {
+        padding: 24px 15px;
+    }
+
+    .video-card h1 {
+        font-size: 22px;
+    }
+
+    .input-wrapper > i {
+        left: 13px;
+    }
+
+    .input-wrapper .form-control,
+    .input-wrapper .form-select {
+        padding-left: 40px;
+    }
+}
+
+/* =========================
+   SMALL DROPDOWN ICON
+========================= */
+
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper .form-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    padding-right: 40px;
+}
+
+.select-wrapper .dropdown-icon {
+    position: absolute;
+
+    right: 15px;
+    left: auto;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #81758f;
+
+    font-size: 12px;
+
+    pointer-events: none;
+
+    transition: color 0.25s ease;
+}
+
+.select-wrapper:hover .dropdown-icon {
+    color: #7b61a8;
+}
